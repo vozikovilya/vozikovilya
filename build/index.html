@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?v=d53845aa1fc8064e7a7b651d93cea25b" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./css/main.min.css?v=d53845aa1fc8064e7a7b651d93cea25b">
+    </head>
+    <body class="body" id="body">
+        <header class="header" id="header">
+            <div class="header__container container">
+                <a href="#" class="header__logo">
+                    LoremIpsum.<span>Net</span>
+                </a>
+                <nav class="header__nav">
+                    <a href="#" class="active">Бизнес</a>
+                    <a href="#">О нас</a>
+                    <a href="#">Цены</a>
+                    <a href="#order">Оформить заказ</a>
+                </nav>
+                <button class="header__nav-mob"></button>
+            </div>
+        </header>
+        <main class="main">
+            <section class="main__section section__banner banner">
+                <div class="container">
+                    <h1>
+                        <span>Lorem ipsum</span> dolor sit amet consectetur <span>adipiscing</span>
+                    </h1>
+                    <ul class="banner__list">
+                        <p class="banner__text">At vero eos et accusamus et iusto odio dignissimos ducimus!</p>
+                        <li class="banner__item">Totam rem aperiam eaque ipsa</li>
+                        <li class="banner__item">Sit voluptatem accusantium doloremque laudantium</li>
+                        <li class="banner__item">Sed ut perspiciatis, unde omnis iste natus error</li>
+                    </ul>
+                    <button class="banner__order banner__btn btn">
+                        заказать
+                    </button>
+                    <button class="banner__more banner__btn btn">
+                        подробнее
+                    </button>
+                </div>
+            </section>
+            <section class="main__section section__order order" id="order">
+                <div class="container">
+                    <h2 class="order__title">Оформление <span>Заказа</span></h2>
+                    <p class="order__text">Перед заполнением формы ознакомьтесь с нашей схемой работы!</p>
+                    
+                    <ul class="order__benefits benefits">
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-search"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Lorem ipsum dolor sit amet
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-percent"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Сonsecteturadipiscing elit
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-add_doc"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Sed do eiusmod tempor
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-mail"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Esse cillum dolore eu fugiat
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-money"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Excepteur sint occaecat cupidatat non proident
+                            </p>
+                        </li>
+                    </ul>
+                    
+                    <form action="" class="order__form form">
+                        <fieldset class="form__fieldset">
+                            <div class="form__box form__select select" id="select">
+                                <div class="select__selected">
+                                    <span id="select-input"></span>
+                                    <label for="select-input">Ваш тип системы</label>
+                                    <button class="select__reset btn__reset" type="reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                    <svg class="select__arrow">
+                                        <use xlink:href="img/sprite.svg#i-arrow-up"></use>
+                                    </svg>
+                                </div>
+    
+                                <div class="select__option option">
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="sed" name="category">
+                                        <label class="option__label" for="sed">Sed ut perspiciatis</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="nemo" name="category">
+                                        <label class="option__label" for="nemo">Nemo enim ipsam Nemo enim ipsam Nemo enim ipsam Nemo enim ipsam</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="et" name="category">
+                                        <label class="option__label" for="et">Et harum quidem</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="temporibus" name="category">
+                                        <label class="option__label" for="temporibus">Temporibus autem</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="itaque" name="category">
+                                        <label class="option__label" for="itaque">Itaque earum rerum</label>
+                                    </div>
+                                    
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="ut" name="category">
+                                        <label class="option__label" for="ut">Sed ut perspiciatis</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="enim" name="category">
+                                        <label class="option__label" for="enim">Nemo enim ipsam</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="harum" name="category">
+                                        <label class="option__label" for="harum">Et harum quidem</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form__box form__email">
+                                <input class="form__box-input" type="email" name="email" id="email" placeholder="Ваш e-mail">
+                                <label class="form__box-label" for="email">Ваш e-mail</label>
+                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                            </div>
+
+                            <div class="form__box form__name">
+                                <input class="form__box-input" type="text" name="name" id="name" placeholder="Ваше имя">
+                                <label class="form__box-label" for="name">Ваше имя</label>
+                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form__fieldset">
+                            <div class="form__slider slider">
+                                <span class="slider__text">Sed ut perspiciatis, unde omnis iste natus</span>
+                                <span class="slider__number" id="slider-number">89 %</span>
+                                <input class="slider__input" id="slider" type="range" min="0" max="100" step="1">
+                            </div>
+                            <div class="form__file file">
+                                <input class="file__input" type="file" id="file">
+                                <label for="file" class="file__label" id="file-label"><svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>Прикрепить файл
+                                </label>
+                            </div>
+                        </fieldset>
+                        <button class="form__submit" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </body>
+    <footer class="footer" id="footer">
+        <div class="footer__container container">
+            <div class="footer__copyright">© 2018 «LoremIpsum.net» Все права защищены.</div>
+            <div class="footer__payment payment">
+                <a href="https://qiwi.com" class="payment__item payment__qiwi">
+                    <svg><use xlink:href="img/sprite.svg#i-qiwi"></use></svg>
+                    Qiwi wallet
+                </a>
+                <a href="https://yoomoney.ru" class="payment__item payment__qiwi">
+                    <svg><use xlink:href="img/sprite.svg#i-yandex"></use></svg>
+                    Yandex Money
+                </a>
+                <a href="https://www.webmoney.ru/" class="payment__item payment__qiwi">
+                    <svg><use xlink:href="img/sprite.svg#i-wm"></use></svg>
+                    Web Money
+                </a>
+            </div>
+            <div class="footer__contact contact">
+                <a href="mailto:info@ipsum228.com" class="contact__item contact__mail">
+                    <svg><use xlink:href="img/sprite.svg#i-mail-male"></use></svg>
+                    info@ipsum228.com
+                </a>
+                <a href="https://vk.com/" class="contact__item contact__mail">
+                    <svg><use xlink:href="img/sprite.svg#i-vk"></use></svg>
+                    Мы вконтакте
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.min.js?v=d53845aa1fc8064e7a7b651d93cea25b"></script>
+</html>

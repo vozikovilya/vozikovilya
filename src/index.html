@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        //= template/head.html
+    </head>
+    <body class="body" id="body">
+        //= template/header.html
+        <main class="main">
+            <section class="main__section section__banner banner">
+                <div class="container">
+                    <h1>
+                        <span>Lorem ipsum</span> dolor sit amet consectetur <span>adipiscing</span>
+                    </h1>
+                    <ul class="banner__list">
+                        <p class="banner__text">At vero eos et accusamus et iusto odio dignissimos ducimus!</p>
+                        <li class="banner__item">Totam rem aperiam eaque ipsa</li>
+                        <li class="banner__item">Sit voluptatem accusantium doloremque laudantium</li>
+                        <li class="banner__item">Sed ut perspiciatis, unde omnis iste natus error</li>
+                    </ul>
+                    <button class="banner__order banner__btn btn">
+                        заказать
+                    </button>
+                    <button class="banner__more banner__btn btn">
+                        подробнее
+                    </button>
+                </div>
+            </section>
+            <section class="main__section section__order order" id="order">
+                <div class="container">
+                    <h2 class="order__title">Оформление <span>Заказа</span></h2>
+                    <p class="order__text">Перед заполнением формы ознакомьтесь с нашей схемой работы!</p>
+                    
+                    <ul class="order__benefits benefits">
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-search"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Lorem ipsum dolor sit amet
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-percent"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Сonsecteturadipiscing elit
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-add_doc"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Sed do eiusmod tempor
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-mail"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Esse cillum dolore eu fugiat
+                            </p>
+                        </li>
+                        <span class="benefits__decor-circle">
+                            <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
+                        </span>
+                        <li class="benefits__item">
+                            <span class="benefits__item-icon">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#i-money"></use>
+                                </svg>
+                            </span>
+                            <p class="benefits__item-text">
+                                Excepteur sint occaecat cupidatat non proident
+                            </p>
+                        </li>
+                    </ul>
+                    
+                    <form action="" class="order__form form">
+                        <fieldset class="form__fieldset">
+                            <div class="form__box form__select select" id="select">
+                                <div class="select__selected">
+                                    <span id="select-input"></span>
+                                    <label for="select-input">Ваш тип системы</label>
+                                    <button class="select__reset btn__reset" type="reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                    <svg class="select__arrow">
+                                        <use xlink:href="img/sprite.svg#i-arrow-up"></use>
+                                    </svg>
+                                </div>
+    
+                                <div class="select__option option">
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="sed" name="category">
+                                        <label class="option__label" for="sed">Sed ut perspiciatis</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="nemo" name="category">
+                                        <label class="option__label" for="nemo">Nemo enim ipsam Nemo enim ipsam Nemo enim ipsam Nemo enim ipsam</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="et" name="category">
+                                        <label class="option__label" for="et">Et harum quidem</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="temporibus" name="category">
+                                        <label class="option__label" for="temporibus">Temporibus autem</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="itaque" name="category">
+                                        <label class="option__label" for="itaque">Itaque earum rerum</label>
+                                    </div>
+                                    
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="ut" name="category">
+                                        <label class="option__label" for="ut">Sed ut perspiciatis</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="enim" name="category">
+                                        <label class="option__label" for="enim">Nemo enim ipsam</label>
+                                    </div>
+            
+                                    <div class="option__item">
+                                        <input class="option__input" type="radio" class="selected-box__option" id="harum" name="category">
+                                        <label class="option__label" for="harum">Et harum quidem</label>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form__box form__email">
+                                <input class="form__box-input" type="email" name="email" id="email" placeholder="Ваш e-mail">
+                                <label class="form__box-label" for="email">Ваш e-mail</label>
+                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                            </div>
+
+                            <div class="form__box form__name">
+                                <input class="form__box-input" type="text" name="name" id="name" placeholder="Ваше имя">
+                                <label class="form__box-label" for="name">Ваше имя</label>
+                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form__fieldset">
+                            <div class="form__slider slider">
+                                <span class="slider__text">Sed ut perspiciatis, unde omnis iste natus</span>
+                                <span class="slider__number" id="slider-number">89 %</span>
+                                <input class="slider__input" id="slider" type="range" min="0" max="100" step="1">
+                            </div>
+                            <div class="form__file file">
+                                <input class="file__input" type="file" id="file">
+                                <label for="file" class="file__label" id="file-label"><svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>Прикрепить файл
+                                </label>
+                            </div>
+                        </fieldset>
+                        <button class="form__submit" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </body>
+    //= template/footer.html
+
+    <script src="./js/main.min.js"></script>
+</html>

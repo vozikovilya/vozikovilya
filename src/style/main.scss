@@ -1,0 +1,1060 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;    
+}
+
+// Font
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/ralewayextrabold.ttf), url(../fonts/ralewayextrabold.wolff), url(../fonts/ralewayextrabold.wolff2);
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/latoregular.ttf), url(../fonts/latoregular.wolff), url(../fonts/latoregular.wolff2);
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    src: url(../fonts/latosemibold.ttf), url(../fonts/latosemibold.wolff), url(../fonts/latosemibold.wolff2);
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/latobold.ttf), url(../fonts/latobold.wolff), url(../fonts/latobold.wolff2);
+}
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: url(../fonts/latoheavy.ttf), url(../fonts/latoheavy.wolff), url(../fonts/latoheavy.wolff2);
+}
+
+// Color
+
+$white: #FFFFFF;
+$blue1: #42A9ED;
+$blue2: #43ABF0;
+$blue3: #3E9CDC;
+$blue4: #286690;
+$blue5: #3A3C4C;
+$blue6: #3D4050;
+$black0: #000000;
+$black1: rgba(16, 16, 29, 0.9);
+$black2: #272733;
+$black3: #2A2B30;
+$gray1: #6F6D7B;
+$gray2: #BBBBBB;
+$gray3: #DEDEE0;
+$gray4: #BEBEC1;
+$gray5: #C3C3C3;
+$red: #F54953;
+
+@mixin shadow-blue {
+    box-shadow:0px 0px 7px 2px rgba(62,156,220,0.19);
+}
+
+$large: 'max-width: 1250px';
+$tablet: 'max-width: 1024px';
+$phone: 'max-width: 768px';
+$small: 'max-width: 500px';
+
+@mixin flex($align, $justify) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+html, body {
+    font-size: 16px;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+a, 
+button,
+input {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    @include flex(center, center);
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+a:focus,
+button:focus,
+input {
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: $black2;
+}
+
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px $gray3 inset !important;
+}
+
+h1 {
+    max-width: 780px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    text-transform: uppercase;
+    color: $black0;
+    margin: 0 0 80px;
+    
+    @media screen and ($phone) {
+        font-size: 36px;
+        line-height: 40px;
+        margin: 0 0 40px;
+    }
+    @media screen and ($small) {
+        font-size: 28px;
+        line-height: 32px;
+        margin: 0 0 20px;
+    }
+}
+h1 span {
+    color: $blue3;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+.container {
+    max-width: 1270px;
+    width: 100%;
+    padding: 0 50px;
+    margin: 0 auto;
+    
+    @media screen and ($tablet) {
+        padding: 0 40px;
+    }
+    @media screen and ($small) {
+        padding: 0 16px;
+    }
+}
+
+// Header
+
+.header {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    background-color: $black1;
+    padding: 32px 0;
+
+    @media screen and ($phone) {
+        padding: 16px 0;
+    }
+
+    &.active::before {
+        content: '';
+        position: fixed;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $black1;
+    }
+    
+    &__container {
+        @include flex(center, space-between);
+    }
+
+    &__logo {
+        font-family: 'Raleway';
+        font-size: 28px;
+        line-height: 33px;
+        text-transform: uppercase;
+        color: $white;
+
+        @media screen and ($small) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    &__logo span {
+        color: $blue1;
+    }
+
+    &__nav {
+        @media screen and ($phone) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            @include flex(start, start);
+            flex-direction: column;
+            max-width: 40%;
+            width: 100%;
+            height: 100%;
+            background-color: $white;
+            padding: 70px 40px 40px;
+            transition: .3s;
+
+            &.active {
+                right: 0;
+            }
+        }
+        @media screen and ($small) {
+            max-width: 100%;
+        }
+    }
+    &__nav a {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $white;
+        margin: 0 30px;
+        transition: .3s;
+        
+        @media screen and ($tablet) {
+            margin: 0 20px;
+        }
+        @media screen and ($phone) {
+            color: $black2;
+            margin: 10px 0;
+        }
+
+        &:first-child {
+            margin: 0 30px 0 0;
+            
+            @media screen and ($tablet) {
+                margin: 0 20px 0 0;
+            }
+            @media screen and ($phone) {
+                margin: 0 0 10px 0;
+            }
+        }
+        &:last-child {
+            margin: 0 0 0 30px;
+            
+            @media screen and ($tablet) {
+                margin: 0 0 0 20px;
+            }
+            @media screen and ($phone) {
+                margin: 10px 0 0 0;
+            }
+        }
+        
+        &:hover,
+        &:focus {
+            color: $blue2;
+            
+            @media screen and ($tablet) {
+                color: $white;
+            }
+            @media screen and ($phone) {
+                color: $black2;
+            }
+        }
+    }
+    &__nav a.active {
+        color: $blue2;
+        pointer-events: none;
+    }
+    &__nav-mob {
+        position: relative;
+        display: none;
+        width: 35px;
+        height: 35px;
+        background-color: $white;
+        border-radius: 50%;
+        transition: .3s;
+
+        @media screen and ($phone) {
+            display: block;
+        }
+    }
+    &__nav-mob::before,
+    &__nav-mob::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 15px;
+        height: 2px;
+        background-color: $black2;
+        border-radius: 2px;
+    }
+    &__nav-mob.active {
+        background-color: $blue2;
+        transition: background-color .3s .3s ease-out;
+    }
+    &__nav-mob::before {
+        top: 40%;
+        transform: translate(-50%, -50%);
+        transition: .3s;
+    }
+    &__nav-mob::after {
+        top: 60%;
+        transform: translate(-50%, -50%);
+        transition: .3s;
+    }
+    &__nav-mob.active::before {
+        top: 50%;
+        background-color: $white;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transition: .3s .3s ease-out;
+    }
+    &__nav-mob.active::after {
+        top: 50%;
+        background-color: $white;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transition: .3s .3s ease-out;
+    }
+}
+
+// Main
+
+.section__banner {
+    background: url('../img/bg-banner.jpg') center no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.banner {
+    padding: 203px 0;
+
+    @media screen and ($phone) {
+        padding: 139px 0 40px;
+    }
+    @media screen and ($small) {
+        padding: 100px 0 30px;
+    }
+
+    &__list {
+        max-width: 780px;
+        margin: 0 0 80px;
+        
+        @media screen and ($phone) {
+            margin: 0 0 40px;
+        }
+        @media screen and ($small) {
+            margin: 0 0 20px;
+        }
+    }
+    &__text,
+    &__item {
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+
+        @media screen and ($small) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    &__text {
+        font-weight: 700;
+        margin: 0 0 10px;
+    }
+    &__item {
+        @include flex(center, flex-start);
+        margin: 0 0 5px;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+    &__item:before {
+        content: '';
+        align-self: flex-start;
+        flex-shrink: 0;
+        width: 4.94px;
+        height: 1.51px;
+        background-color: $black0;
+        margin: 11.25px 11.25px 11.25px 10px;
+    }
+    
+    &__btn {
+        display: inline-block;
+        max-width: 183px;
+        font-size: 13px;
+        line-height: 16px;
+        padding: 15px 10px;
+        margin: 0 0 0 30px;
+        
+        @media screen and ($small) {
+            max-width: 100%;
+            margin: 10px auto 0;
+        }
+
+        &:first-of-type {
+            margin: 0;
+        }
+    }
+    &__order {
+        background-color: $blue3;
+        color: $white;
+        border: 1px solid $white;
+
+        &:hover,
+        &:focus {
+            background-color: $white;
+            color: $blue3;
+            border: 1px solid $blue3;
+        }
+    }
+    &__more {
+        background-color: $white;
+        color: $black3;
+        border: 1px solid $gray1;
+
+        &:hover,
+        &:focus {
+            background-color: $black3;
+            border: 1px solid $black3;
+            color: $white;
+        }
+    }
+}
+
+.section__order {
+    background: url('../img/bg-order.jpg') center no-repeat;
+    background-size: cover;
+    padding: 120px 0 150px;
+        
+    @media screen and ($tablet) {
+        padding: 70px 0;
+    }
+}
+
+.order {
+    &__title {
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 43px;
+        text-transform: uppercase;
+        text-align: center;
+        color: $white;
+        margin: 0 auto 30px;
+        
+        @media screen and ($phone) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @media screen and ($small) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+    &__title span {
+        color: $blue3;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 22px;
+        color: $gray2;
+        text-align: center;
+        margin: 0 0 80px;
+        
+        @media screen and ($small) {
+            font-size: 14px;
+            line-height: 16px;
+            margin: 0 0 50px;
+        }
+    }
+}
+
+.benefits {
+    @include flex(center, space-evenly);
+    padding: 0 50px;
+    
+    @media screen and ($tablet) {
+        flex-wrap: wrap;
+    }
+    @media screen and ($phone) {
+        padding: 0;
+    }
+    
+    &__item {
+        position: relative;
+        max-width: 209px;
+        width: 100%;
+        
+        @media screen and ($tablet) {
+            margin: 0 0 30px;
+        }
+    }
+
+    &__item-icon {
+        @include flex(center, center);
+        width: 100px;
+        height: 100px;
+        background-color: $blue3;
+        border: 5px solid #286690;
+        border-radius: 50%;
+        margin: 0 auto;
+
+        @media screen and ($phone) {
+            width: 90px;
+            height: 90px;
+        }
+    }
+    &__item-icon svg {
+        width: 55px;
+        height: 55px;
+        fill: $white;
+    }
+
+    &__item-text {
+        position: absolute;
+        top: 120px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        max-width: 188px;
+        width: 210%;
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+        text-align: center;
+        margin: 0;
+        
+        @media screen and ($tablet) {
+            position: static;
+            max-width: 100%;
+            width: 100%;
+            transform: translate(0, 0);
+            margin: 20px 0 0;
+        }
+        @media screen and ($small) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    &__decor-circle {
+        flex-shrink: 0;
+        max-width: 110px;
+        width: 100%;
+        height: 6px;
+        margin: 0 5px;
+        
+        @media screen and ($tablet) {
+            display: none;
+        }
+    }
+    &__decor-circle svg {
+        width: 100%;
+    }
+}
+
+.form {
+    @include flex(center, center);
+    flex-direction: column;
+    padding: 120px 0 0;
+    
+    @media screen and ($phone) {
+        padding: 50px 0 0;
+    }
+
+    &__fieldset {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        border: none;
+        padding: 0;
+        margin: 30px 0 0;
+
+        @media screen and ($phone) {
+            grid-template-columns: repeat(1, 1fr);
+            column-gap: 0;
+            row-gap: 30px;
+        }
+    }
+    &__fieldset:first-child {
+        margin: 0;
+    }
+
+    &__box {
+        position: relative;
+        width: 100%;
+        height: 48px;
+        font-size: 18px;
+        line-height: 22px;
+        background-color: $gray3;
+        border: 1px solid $white;
+        border-radius: 3px;
+        color: $black2;
+    }
+    &__box &__box-label,
+    &__box &__box-input,
+    &__box .select__selected {
+        position: absolute;
+    }
+    &__box &__box-input {
+        width: calc(100% - 40px);
+        top: 12px;
+        left: 10px;
+        background-color: transparent;
+        border: none;
+    }
+    &__box &__box-input::placeholder {
+        font-size: 0;
+    }
+    &__box &__box-label {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        padding: 12px 10px;
+        transition: .3s;
+        cursor: pointer;
+    }
+    &__box &__box-input:focus + &__box-label,
+    &__box &__box-input:not(:placeholder-shown) + label {
+        top: -35px;
+        font-size: 13px;
+        line-height: 16px;
+        color: $white;
+        pointer-events: none;
+    }
+
+    .btn__reset {
+        @include flex(center, center);
+        position: absolute;
+        z-index: 1;
+        right: 10px;
+        top: 50%;
+        transform: translate(0, -50%) scale(0);
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+        transition: .3s;
+    }
+    .btn__reset.visible {
+        transform: translate(0, -50%) scale(1);
+    }
+    .btn__reset svg {
+        width: 16px;
+        height: 16px;
+        fill: $red;
+    }
+
+    &__submit {
+        max-width: 370px;
+        width: 100%;
+        background-color: $blue3;
+        border: 1px solid $white;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        padding: 17.5px 0;
+        margin: 40px 0 0;
+        transition: .3s;
+    }
+    &__submit:hover {
+        background-color: $white;
+        border: 1px solid $blue3;
+        color: $blue3;
+    }
+}
+
+.select {
+    position: relative;
+    cursor: pointer;
+
+    &.active {
+        background-color: $blue5;
+        border: 1px solid $blue5;
+        border-radius: 3px 3px 0 0;
+        color: $white;
+        transition: .3s
+    }
+
+    &__selected {
+        width: 100%;
+        height: 48px;
+    }
+    
+    &__selected span {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        z-index: -1;
+        opacity: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        pointer-events: none;
+        background-color: transparent;
+        border: none;
+        width: calc(100% - 75px);
+    }
+    &__selected span.visible {
+        z-index: 0;
+        opacity: 1;
+    }
+    &.active span {
+        color: $white;
+    }
+    &__selected label {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        transition: .3s;
+        cursor: pointer;
+    }
+    &__selected span.visible + label {
+        top: -23px;
+        font-size: 13px;
+        line-height: 16px;
+        color: $white;
+        cursor: auto;
+        pointer-events: none;
+    }
+    .btn__reset {
+        right: 35px;
+    }
+    &__arrow {
+        position: absolute;
+        right: 10px;
+        transform: translate(0, 70%) rotateX(180deg);
+        width: 20px;
+        height: 20px;
+        transition: .3s
+    }
+    &.active &__arrow {
+        transform: translate(0, 65%) rotateX(0deg);
+        fill: $white;
+    }
+
+    &__option {
+        position: absolute;
+        z-index: 2;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: calc(100% + 2px);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        background-color: $black2;
+        border: 1px solid $blue5;
+        border-radius: 0 0 3px 3px;
+        padding: 5px 10px;
+        scrollbar-color: $blue3 $blue5;
+        scrollbar-width: thin;
+        scrollbar-gutter: both-edges;
+        transition: max-height .3s ease-out;
+
+        &::-webkit-scrollbar {
+            width: 16px;
+            background-color: $blue5;
+            border-radius: 99px;
+            border: 4px solid $black2;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background-color: $blue3;
+            border-radius: 6px;
+            border-left: 4px solid $black2;
+            border-right: 4px solid $black2;
+        }
+        
+        &::-webkit-scrollbar-track-piece {
+            margin: 2px 0;
+        }
+    }
+    &.active &__option {
+        max-height: 180px;
+        overflow: auto;
+        opacity: 1;
+    }
+}
+
+.option {
+
+    &__item {
+        margin: 10px 0;
+    }
+
+    &__input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        overflow: hidden;
+    }
+
+    &__label {
+        cursor: pointer;
+        transition: .3s;
+    }
+    &__item:hover &__label {
+        color: $blue1;
+    }
+}
+
+.slider {
+    grid-column: 1/3;
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+
+    &__input {
+        width: 100%;
+        -webkit-appearance: none;
+        height: 6px;
+        border-radius: 99px;
+        border: 1px solid $white;
+        background-color: $gray4;
+        cursor: pointer;
+        margin: 16.44px 0 0;
+        
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 23.72px;
+            height: 23.72px;
+            background: $blue1;
+            border-radius: 50%;
+            border: 3px solid $blue4;
+        }
+        &::-moz-range-thumb {
+            width: 23.72px;
+            height: 23.72px;
+            background: $blue1;
+            border-radius: 50%;
+            border: 3px solid $blue4;
+        }
+    }
+
+    &__text,
+    &__number {
+        font-size: 18px;
+        line-height: 22px;
+        color: $white;
+    }
+}
+
+.file {
+    position: relative;
+    height: 48px;
+    background-color: $white;
+    border: 2px solid $blue3;
+    border-radius: 3px;
+    transition: .3s;
+
+    &:hover {
+        border-color: $white;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__label {
+        max-width: 100%;
+        width: 100%;
+        border-top: 11px solid $white;
+        border-bottom: 11px solid $white;
+        border-left: 20px solid $white;
+        border-right: 20px solid $white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px;
+        color: $black2;
+        text-transform: uppercase;
+        text-align: center;
+        word-break: break-all;
+        cursor: pointer;
+        transition: .3s;
+    }
+    &__label:hover {
+        background-color: $blue3;
+        border-color: $blue3;
+        color: $white;
+    }
+    &__label svg {
+        width: 17.44px;
+        height: 21px;
+        fill: $black2;
+        vertical-align: sub;
+        margin: 0 10px 0 0;
+        transition: .3s;
+    }
+    &__label:hover svg {
+        fill: $white;
+    }
+}
+
+// Footer
+
+.footer {
+    background-color: $blue6;
+    padding: 30px 0;
+
+    &__container {
+        @include flex(center, space-between);
+        font-size: 13px;
+        line-height: 16px;
+
+        @media screen and ($large) {
+            flex-wrap: wrap;
+        }
+        @media screen and ($phone) {
+            flex-direction: column;
+        }
+    }
+
+    &__copyright {
+        color: $white;
+
+        @media screen and ($large) {
+            width: 100%;
+            order: 2;
+            text-align: center;
+            margin: 30px 0 0;
+        }
+    }
+
+    &__payment,
+    &__contact {
+        @include flex(center, space-between);
+    }
+}
+
+.payment,
+.contact {
+    &__item {
+        @include flex(center, center);
+        flex-shrink: 0;
+        margin: 0 0 0 38px;
+        transition: .3s;
+        
+        &:first-child {
+            margin: 0;
+        }
+        
+        &:hover {
+            color: $blue3;
+        }
+
+        @media screen and ($tablet) {
+            margin: 0 0 0 20px;
+        }
+        @media screen and ($phone) {
+            margin: 10px 10px 0;
+            
+            &:first-child {
+                margin: 10px 10px 0;
+            }
+        }
+    }
+
+    &__item svg {
+        width: 20px;
+        height: 20px;
+        fill: $blue3;
+        margin: 0 10px 0 0;
+        transition: .3s;
+    }
+}
+
+.payment {
+    max-width: 476px;
+    width: 100%;
+    border-left: 1px solid $gray5;
+    border-right: 1px solid $gray5;
+    padding: 0 40px;
+    margin: 0 40px;
+
+    @media screen and ($large) {
+        max-width: 50%;
+        flex-shrink: 0;
+        border-left: none;
+        border-right: none;
+        padding: 0 40px 0 0;
+        margin: 0;
+    }
+    @media screen and ($phone) {
+        max-width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 1;
+        padding: 0;
+        margin: 20px 0 0;
+    }
+
+    &__item {
+        color: $gray5;
+    }
+}
+
+.contact {
+    @media screen and ($phone) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        color: $white;
+    }
+}
