@@ -13518,7 +13518,7 @@ const headerNavBtn = header.querySelector('.header__nav-mob');
 
 header.addEventListener('click', (e) => {
 
-    if(headerNavBtn.classList.contains('active') && e.target !== headerNav && !headerNav.contains(e.target)) {
+    if(headerNavBtn.classList.contains('active') && e.target !== headerNav) {
         body.classList.remove('no-scroll');
         header.classList.remove('active');
         headerNavBtn.classList.remove('active');
