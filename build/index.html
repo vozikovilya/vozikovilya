@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?v=db40abf0538e0accffccc11be15c1693" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="./css/main.min.css?v=db40abf0538e0accffccc11be15c1693">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css?v=cbd0199db6ddacd3269864bade28ffc5" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="./css/main.min.css?v=cbd0199db6ddacd3269864bade28ffc5">
     </head>
     <body class="body" id="body">
         <header class="header" id="header">
@@ -24,7 +24,11 @@
             </div>
         </header>
         <main class="main">
-            <section class="main__section section__banner banner">
+            <section class="main-section main-section__banner banner">
+                <picture class="banner__bg">
+                    <source srcset="img/bg-banner.webp" type="image/webp">
+                    <img class="banner__bg-img" src="img/bg-banner.jpg" alt="Фоновое изображение блока Banner">
+                </picture>
                 <div class="container">
                     <h1>
                         <span>Lorem ipsum</span> dolor sit amet consectetur <span>adipiscing</span>
@@ -43,7 +47,11 @@
                     </button>
                 </div>
             </section>
-            <section class="main__section section__order order" id="order">
+            <section class="main-section main-section__order order" id="order">
+                <picture class="order__bg">
+                    <source srcset="img/bg-order.webp" type="image/webp">
+                    <img class="order__bg-img" src="img/bg-order.jpg" alt="Фоновое изображение блока Order">
+                </picture>
                 <div class="container">
                     <h2 class="order__title">Оформление <span>Заказа</span></h2>
                     <p class="order__text">Перед заполнением формы ознакомьтесь с нашей схемой работы!</p>
@@ -59,7 +67,7 @@
                                 Lorem ipsum dolor sit amet
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -72,7 +80,7 @@
                                 Сonsecteturadipiscing elit
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -85,7 +93,7 @@
                                 Sed do eiusmod tempor
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -98,7 +106,7 @@
                                 Esse cillum dolore eu fugiat
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -119,7 +127,7 @@
                                 <div class="select__selected">
                                     <span id="select-input"></span>
                                     <label for="select-input">Ваш тип системы</label>
-                                    <button class="select__reset btn__reset" type="reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                    <button class="select__reset btn-reset" type="reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
                                     <svg class="select__arrow">
                                         <use xlink:href="img/sprite.svg#i-arrow-up"></use>
                                     </svg>
@@ -171,13 +179,13 @@
                             <div class="form__box form__email">
                                 <input class="form__box-input" type="email" name="email" id="email" placeholder="Ваш e-mail">
                                 <label class="form__box-label" for="email">Ваш e-mail</label>
-                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                <button class="form__box-reset btn-reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
                             </div>
 
                             <div class="form__box form__name">
                                 <input class="form__box-input" type="text" name="name" id="name" placeholder="Ваше имя">
                                 <label class="form__box-label" for="name">Ваше имя</label>
-                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                <button class="form__box-reset btn-reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
                             </div>
                         </fieldset>
                         <fieldset class="form__fieldset">
@@ -188,7 +196,9 @@
                             </div>
                             <div class="form__file file">
                                 <input class="file__input" type="file" id="file">
-                                <label for="file" class="file__label" id="file-label"><svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>Прикрепить файл
+                                <label for="file" class="file__label" id="file-label">
+                                    <svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>
+                                    <span class="file__label-text">Прикрепить файл</span>
                                 </label>
                             </div>
                         </fieldset>
@@ -202,15 +212,15 @@
         <div class="footer__container container">
             <div class="footer__copyright">© 2018 «LoremIpsum.net» Все права защищены.</div>
             <div class="footer__payment payment">
-                <a href="https://qiwi.com" class="payment__item payment__qiwi">
+                <a href="https://qiwi.com" class="payment__item">
                     <svg><use xlink:href="img/sprite.svg#i-qiwi"></use></svg>
                     Qiwi wallet
                 </a>
-                <a href="https://yoomoney.ru" class="payment__item payment__qiwi">
+                <a href="https://yoomoney.ru" class="payment__item">
                     <svg><use xlink:href="img/sprite.svg#i-yandex"></use></svg>
                     Yandex Money
                 </a>
-                <a href="https://www.webmoney.ru/" class="payment__item payment__qiwi">
+                <a href="https://www.webmoney.ru/" class="payment__item">
                     <svg><use xlink:href="img/sprite.svg#i-wm"></use></svg>
                     Web Money
                 </a>
@@ -228,5 +238,5 @@
         </div>
     </footer>
 
-    <script src="./js/main.min.js?v=db40abf0538e0accffccc11be15c1693"></script>
+    <script src="./js/main.min.js?v=cbd0199db6ddacd3269864bade28ffc5"></script>
 </html>

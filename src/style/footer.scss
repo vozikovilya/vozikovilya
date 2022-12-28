@@ -1,0 +1,112 @@
+
+.footer {
+    background-color: $blue6;
+    padding: 30px 0;
+
+    &__container {
+        @include flex(center, space-between);
+        font-size: 13px;
+        line-height: 16px;
+
+        @media screen and ($large) {
+            flex-wrap: wrap;
+        }
+        @media screen and ($phone) {
+            flex-direction: column;
+        }
+    }
+
+    &__copyright {
+        color: $white;
+
+        @media screen and ($large) {
+            width: 100%;
+            order: 2;
+            text-align: center;
+            margin: 30px 0 0;
+        }
+    }
+
+    &__payment,
+    &__contact {
+        @include flex(center, space-between);
+    }
+}
+
+.payment,
+.contact {
+    &__item {
+        @include flex(center, center);
+        flex-shrink: 0;
+        margin: 0 0 0 38px;
+        transition: .3s;
+        
+        &:first-child {
+            margin: 0;
+        }
+        
+        &:hover {
+            color: $blue3;
+        }
+
+        @media screen and ($tablet) {
+            margin: 0 0 0 20px;
+        }
+        @media screen and ($phone) {
+            margin: 10px 10px 0;
+            
+            &:first-child {
+                margin: 10px 10px 0;
+            }
+        }
+    }
+
+    &__item svg {
+        width: 20px;
+        height: 20px;
+        fill: $blue3;
+        margin: 0 10px 0 0;
+        transition: .3s;
+    }
+}
+
+.payment {
+    max-width: 476px;
+    width: 100%;
+    border-left: 1px solid $gray5;
+    border-right: 1px solid $gray5;
+    padding: 0 40px;
+    margin: 0 40px;
+
+    @media screen and ($large) {
+        max-width: 50%;
+        flex-shrink: 0;
+        border-left: none;
+        border-right: none;
+        padding: 0 40px 0 0;
+        margin: 0;
+    }
+    @media screen and ($phone) {
+        max-width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 1;
+        padding: 0;
+        margin: 20px 0 0;
+    }
+
+    &__item {
+        color: $gray5;
+    }
+}
+
+.contact {
+    @media screen and ($phone) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__item {
+        color: $white;
+    }
+}

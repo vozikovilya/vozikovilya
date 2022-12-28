@@ -80,8 +80,6 @@ allBtnResetInput.forEach(btn => {
 
         input.value = '';
         btn.classList.remove('visible');
-        
-        console.log(input.value);
     });
 });
 
@@ -101,12 +99,12 @@ slider.addEventListener('input', () => {
 // File
 
 const inputFile = document.querySelector('#file');
-const labelFile = document.querySelector('#file-label');
+const labelFileText = document.querySelector('.file__label-text');
 
 inputFile.addEventListener('change', function() {
     if (inputFile.value) {
-        labelFile.innerHTML = '<svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>' + inputFile.files[0].name;
+        labelFileText.innerHTML = inputFile.files[0].name;
     } else {
-        labelFile.innerHTML = '<svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>Прикрепить файл';
+        labelFileText.innerHTML = 'Прикрепить файл';
     }
 });

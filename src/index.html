@@ -6,7 +6,11 @@
     <body class="body" id="body">
         //= template/header.html
         <main class="main">
-            <section class="main__section section__banner banner">
+            <section class="main-section main-section__banner banner">
+                <picture class="banner__bg">
+                    <source srcset="img/bg-banner.webp" type="image/webp">
+                    <img class="banner__bg-img" src="img/bg-banner.jpg" alt="Фоновое изображение блока Banner">
+                </picture>
                 <div class="container">
                     <h1>
                         <span>Lorem ipsum</span> dolor sit amet consectetur <span>adipiscing</span>
@@ -25,7 +29,11 @@
                     </button>
                 </div>
             </section>
-            <section class="main__section section__order order" id="order">
+            <section class="main-section main-section__order order" id="order">
+                <picture class="order__bg">
+                    <source srcset="img/bg-order.webp" type="image/webp">
+                    <img class="order__bg-img" src="img/bg-order.jpg" alt="Фоновое изображение блока Order">
+                </picture>
                 <div class="container">
                     <h2 class="order__title">Оформление <span>Заказа</span></h2>
                     <p class="order__text">Перед заполнением формы ознакомьтесь с нашей схемой работы!</p>
@@ -41,7 +49,7 @@
                                 Lorem ipsum dolor sit amet
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -54,7 +62,7 @@
                                 Сonsecteturadipiscing elit
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -67,7 +75,7 @@
                                 Sed do eiusmod tempor
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -80,7 +88,7 @@
                                 Esse cillum dolore eu fugiat
                             </p>
                         </li>
-                        <span class="benefits__decor-circle">
+                        <li class="benefits__decor-circle">
                             <svg><use xlink:href="img/sprite.svg#i-circle"></use></svg>
                         </span>
                         <li class="benefits__item">
@@ -101,7 +109,7 @@
                                 <div class="select__selected">
                                     <span id="select-input"></span>
                                     <label for="select-input">Ваш тип системы</label>
-                                    <button class="select__reset btn__reset" type="reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                    <button class="select__reset btn-reset" type="reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
                                     <svg class="select__arrow">
                                         <use xlink:href="img/sprite.svg#i-arrow-up"></use>
                                     </svg>
@@ -153,13 +161,13 @@
                             <div class="form__box form__email">
                                 <input class="form__box-input" type="email" name="email" id="email" placeholder="Ваш e-mail">
                                 <label class="form__box-label" for="email">Ваш e-mail</label>
-                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                <button class="form__box-reset btn-reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
                             </div>
 
                             <div class="form__box form__name">
                                 <input class="form__box-input" type="text" name="name" id="name" placeholder="Ваше имя">
                                 <label class="form__box-label" for="name">Ваше имя</label>
-                                <button class="form__box-reset btn__reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
+                                <button class="form__box-reset btn-reset"><svg><use xlink:href="img/sprite.svg#i-reset"></use></svg></button>
                             </div>
                         </fieldset>
                         <fieldset class="form__fieldset">
@@ -170,7 +178,9 @@
                             </div>
                             <div class="form__file file">
                                 <input class="file__input" type="file" id="file">
-                                <label for="file" class="file__label" id="file-label"><svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>Прикрепить файл
+                                <label for="file" class="file__label" id="file-label">
+                                    <svg><use xlink:href="img/sprite.svg#i-doc"></use></svg>
+                                    <span class="file__label-text">Прикрепить файл</span>
                                 </label>
                             </div>
                         </fieldset>
